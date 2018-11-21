@@ -14,7 +14,6 @@ const flash = require("connect-flash")
 const _ = require("lodash")
 const cors = require('cors');
 const axios = require("axios")
-const path = require("path")
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 require("./models/User")
