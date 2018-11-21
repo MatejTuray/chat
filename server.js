@@ -14,6 +14,7 @@ const flash = require("connect-flash")
 const _ = require("lodash")
 const cors = require('cors');
 const axios = require("axios")
+const enforce = require("express-sslify")
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 require("./models/User")
@@ -29,6 +30,7 @@ app.use(cookieSession({
     keys: [key]
 }))
 app.use(flash())
+app.use(enforce.HTTPS());
 app.use(passport.initialize())
 app.use(passport.session())
 require("./oauth/oauth-google")(app)
@@ -143,7 +145,7 @@ io.on("connection", (socket) => {
         }        
         let msg = generateMessage(message.from, message.text, message.img)
         console.log("updating")
-        axios.patch(`http://localhost:5000/api/users/${userId}/friends/${name}`, {
+        axios.patch(`https://react-chat01.herokuapp.com/api/users/${userId}/friends/${name}`, {
             from: msg.from,
             text: msg.text,
             img: msg.img,
@@ -153,7 +155,7 @@ io.on("connection", (socket) => {
         User.findOne({name:name}, null, null, (err, user) => {
         if(user){
         {console.log(user);
-            axios.patch(`http://localhost:5000/api/users/${user._id}/friends/${msg.from}`, {
+            axios.patch(`https://react-chat01.herokuapp.com/api/users/${user._id}/friends/${msg.from}`, {
                 from: msg.from,
                 text: msg.text,
                 img: msg.img,
@@ -201,7 +203,7 @@ io.on("connection", (socket) => {
         let msg = generateMessage(message.from, message.text, message.img)
         console.log(msg) 
         console.log(id)       
-        axios.patch(`http://localhost:5000/api/channels/${id}`, {
+        axios.patch(`https://react-chat01.herokuapp.com/api/channels/${id}`, {
             from: msg.from,
             text: msg.text,
             img: msg.img,

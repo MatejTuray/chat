@@ -28,7 +28,7 @@ module.exports = (app) => {
     passport.use(new GitHubStrategy({
         clientID: GitHubClientID,
         clientSecret: GitHubClientSecret,
-        callbackURL: "http://localhost:5000/auth/github/callback",
+        callbackURL: "https://react-chat01.herokuapp.com//auth/github/callback",
     }, (accessToken, refreshToken, profile, done) => {
 
         User.findOne({
