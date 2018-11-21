@@ -22,7 +22,7 @@ import VideoCallSocket from "./containers/VideoCallSocket"
 
 
 const history = createBrowserHistory();
-const socket = io("https://reactchat-api.herokuapp.com/")
+const socket = io("https://react-chat01.herokuapp.com/")
 
 class App extends Component {
   constructor(props) {

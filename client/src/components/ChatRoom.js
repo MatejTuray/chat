@@ -54,7 +54,7 @@ class ChatRoom extends Component {
             
         })
         
-        axios.get(`https://reactchat-api.herokuapp.com/api/channels/${this.props.room.id}`).then((res) => this.setState({
+        axios.get(`/api/channels/${this.props.room.id}`).then((res) => this.setState({
             messages: res.data.messages
         }))
             

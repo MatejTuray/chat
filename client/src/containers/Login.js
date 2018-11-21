@@ -36,7 +36,7 @@ class Login extends Component {
         return (
             <div className="container-fluid"  id="login">
             <ToastContainer
-                className="toast w-100 text-center"
+                className="toast text-center"
           hideProgressBar={true}
           newestOnTop={true}
           autoClose={7000}
@@ -50,13 +50,13 @@ class Login extends Component {
                 <h1 className="login_heading">ReactChat.io</h1>
                 <h3 className="login_heading">A place to chat and make new friends </h3>
                 <div className="row">
-                <a className="login_btn" onClick={this.handleLogin} href="https://reactchat-api.herokuapp.com/auth/google"><GoogleLoginButton>Log in with Google</GoogleLoginButton></a>
+                <a className="login_btn" onClick={this.handleLogin} href="/auth/google"><GoogleLoginButton>Log in with Google</GoogleLoginButton></a>
                 </div>
                 <div className="row">
-                <a className="login_btn" onClick={this.handleLogin} href="https://reactchat-api.herokuapp.com/auth/facebook"><FacebookLoginButton>Log in with Facebook</FacebookLoginButton></a>
+                <a className="login_btn" onClick={this.handleLogin} href="/auth/facebook"><FacebookLoginButton>Log in with Facebook</FacebookLoginButton></a>
                 </div>
                 <div className="row">
-                <a className="login_btn" onClick={this.handleLogin} href="https://reactchat-api.herokuapp.com/auth/github"><GithubLoginButton >Log in with Github</GithubLoginButton ></a>
+                <a className="login_btn" onClick={this.handleLogin} href="/auth/github"><GithubLoginButton >Log in with Github</GithubLoginButton ></a>
                 </div>
                 
                 {this.state.loading ? <div className="mt-5 d-flex justify-content-center align-items-center" ><div class="dot-loader"></div>

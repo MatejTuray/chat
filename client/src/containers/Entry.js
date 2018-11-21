@@ -19,14 +19,10 @@ class Entry extends Component {
         setTimeout( () => 
         this.setState({
             redirect:true
-        }), 5000)
+        }), 60000)
     
     }
-    componentDidUpdate() {
-        if(this.props.auth.name === ""){
-            this.props.fetchUser()
-        }
-    }
+  
     render() {
         return (
             <div className="container-fluid"  id="login">

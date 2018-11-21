@@ -142,7 +142,7 @@ class Dashboard extends Component {
             this.props.getAllChannels()
         })
         
-        axios.get("https://reactchat-api.herokuapp.com/api/users/").then((res) => { this.setState({
+        axios.get("/api/users/").then((res) => { this.setState({
             allUsers: res.data
         })})       
         if(this.props.auth.pending.length !== 0){

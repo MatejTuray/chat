@@ -69,8 +69,8 @@ module.exports = (app) => {
         scope: ["profile", "email"]
     }))
     app.get("/auth/google/callback", passport.authenticate("google", {
-        successRedirect: 'https://react-chat-client.herokuapp.com/entry', 
-        failureRedirect: "https://react-chat-client.herokuapp.com/503",
+        successRedirect: '/entry', 
+        failureRedirect: "/503",
         failureFlash: 'Invalid social authentication',
         successFlash: 'Welcome'
     }
@@ -81,9 +81,7 @@ module.exports = (app) => {
     })
     app.get("/api/current_user", (req, res) => {          
         if(req.user){            
-            usr = req.user
-            console.log(usr)
-            res.json(usr)     
+            res.status(200).send(req.user)  
         
         }
         
