@@ -14,7 +14,7 @@ const flash = require("connect-flash")
 const _ = require("lodash")
 const cors = require('cors');
 const axios = require("axios")
-const enforce = require("express-sslify")
+
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 require("./models/User")
@@ -30,7 +30,7 @@ app.use(cookieSession({
     keys: [key]
 }))
 app.use(flash())
-app.use(enforce.HTTPS());
+
 app.use(passport.initialize())
 app.use(passport.session())
 require("./oauth/oauth-google")(app)

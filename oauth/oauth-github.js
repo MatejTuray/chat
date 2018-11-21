@@ -28,7 +28,7 @@ module.exports = (app) => {
     passport.use(new GitHubStrategy({
         clientID: GitHubClientID,
         clientSecret: GitHubClientSecret,
-        callbackURL: "https://react-chat01.herokuapp.com//auth/github/callback",
+        callbackURL: "https://react-chat01.herokuapp.com/auth/github/callback",
     }, (accessToken, refreshToken, profile, done) => {
 
         User.findOne({
@@ -61,8 +61,8 @@ module.exports = (app) => {
 
     app.get("/auth/github", passport.authenticate("github", { scope: ['read:user'] }))
     app.get("/auth/github/callback", passport.authenticate("github", {
-        successRedirect: 'https://reactchatio.herokuapp.com/entry',
-        failureRedirect: "https://reactchatio.herokuapp.com/503",
+        successRedirect: '/entry',
+        failureRedirect: "/503",
         failureFlash: 'Invalid social authentication',
         successFlash: 'Welcome'
     }))
