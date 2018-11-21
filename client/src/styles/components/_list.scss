@@ -1,0 +1,55 @@
+.friendlist{
+    margin-top: 6rem;
+   
+    
+}
+.friendlist_img{
+    max-height: $m-size;
+    width: auto
+}
+.friendlist_button{
+    background: transparent;
+    border: none;
+    margin-right: 1rem !important;
+    color:#007bff!important;
+}
+.friendlist_button:hover{
+    color: darken(#007bff, 20)!important
+}
+.friendlist_person{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin-left: -2.5rem;
+    padding: 0.5rem;
+    align-items: center;
+    background-color: white;
+    transition:all 0.3s ease
+}
+.friendlist_person:hover{
+    -webkit-transform: scale(1.010);
+        -ms-transform: scale(1.010);
+        transform: scale(1.010);    
+    cursor: pointer;
+}
+.friendlist_icons{
+    float: left;
+    margin-left: auto;
+}
+.dropdown-menu.show{
+    width: 20rem;
+    border: none;
+    background-color: transparent;
+}
+.drop{
+    margin-right: 0!important
+}
+.css-10nd86i {
+    color: black !important;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+.css-15k3avv{
+    margin-bottom:10rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}

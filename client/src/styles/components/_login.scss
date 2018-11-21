@@ -1,0 +1,56 @@
+    #login{
+        min-height:100vh;
+        min-width: 100vw;
+        background-repeat:repeat;
+        background-position: center center;
+        background-size: cover;
+        background: #5C258D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: white;
+        background-blend-mode: darken;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        
+    }
+    #box{
+      
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 1rem;
+        bottom: 0;
+        left: 1rem;
+        width: 90%;
+        height: 90%;
+        
+        
+    }
+    #border{
+      
+        padding: 2rem;
+        border: 1px solid black;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+    .login_btn{
+        width: 25rem 
+    }
+    .login_heading{        
+        text-align: center;
+    }
+ 
+
+    @media (min-width:$desktop-breakpoint){
+        #box{            
+            width: 20%;
+            height: 33%;
+        }
+        .login_btn{
+            width:25rem;
+        }
+        .login_heading{
+            text-align: center;
+        }
+    }

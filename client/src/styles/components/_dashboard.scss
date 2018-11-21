@@ -1,0 +1,167 @@
+#main{
+    min-height:100vh;
+    min-width: 100vw;
+
+    background-repeat:repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+.nav_sidebar{    
+    background-color: 
+#001529;
+    min-height: 100%;
+}
+#dashboard{
+    min-height:100vh;
+    min-width: 100vw;
+
+}
+
+.bm-menu{
+    background: #5c258d; /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to bottom, #5c258d, #4389a2); /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to bottom, #5c258d, #4389a2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+
+
+    color: white;
+    overflow: hidden!important;
+    
+}
+.bm-menu-wrap{
+    z-index: 1!important;
+    margin-top:1.5rem;
+}
+.link{
+    color: white;
+}
+.bm-item-list{
+    margin-top:3rem;
+}
+
+.bm-burger-button{
+    display: none;
+}
+.md-form{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: calc(100% - 2.5rem);
+    margin-left: 0.5rem;
+   
+}
+.md-form .prefix {
+    top: 0.85rem;
+    font-size: 1.15rem;
+    left: 0.5rem;
+}
+#profile{
+    padding: 1.25rem;
+}
+.user_name{
+    margin-top: 1rem;
+    margin-left: 0rem;
+}
+.user_img{
+    margin-left: 0rem;
+    border-radius: 1px;
+    padding: 1rem;
+    width: 3rem;
+}
+#profile{
+  border-bottom: 1px solid black
+    
+    
+}
+.menu_item_text{
+    margin-right: 1rem;
+    
+}
+.menu-item:hover{
+    background-color: rgb(170, 152, 152);
+    color: blue !important;
+}
+i{
+    margin-top: .35rem;
+}
+.navbar{
+    background:lighten(#5C258D, 5);  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to left, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to left, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.nav-item{
+    background-color: wheat;
+    border: 1px solid black;
+}
+.nav-item:hover{
+    background-color:blue;
+}
+.nav-link{
+    color:black
+}
+.nav-link:hover{
+    color:white;
+}
+.navbar-brand{
+    color: white !important;
+}
+
+.navbar-toggler{
+    color: white !important;
+}
+#tab_list{
+    z-index: 0;
+    padding:1rem;
+    
+}
+#primary{
+    margin-top: 5rem;
+}
+.dropdownButton{
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+.create_channel_button{
+    margin-left: 0.5rem;
+}
+
+.online{
+    color: darkgreen;
+}
+.offline{
+    color: darkred;
+}
+#chat{
+    height: 85vh;
+    padding: 0;
+    margin-top: 5rem;
+}
+.container{
+    padding: 0;
+}
+.container-fluid{
+    overflow: hidden;
+}
+.end_conv{
+    background: transparent;
+    border: none;
+
+}
+i{
+    font-size: 0.9rem;   
+}
+#end_conv_icon{
+    color: white;
+    
+}
+@media (min-width:$desktop-breakpoint){
+.toast{
+    margin-left: -50%
+}
+}
