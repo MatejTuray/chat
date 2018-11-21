@@ -61,8 +61,8 @@ module.exports = (app) => {
 
     app.get("/auth/facebook", passport.authenticate("facebook"))
     app.get("/auth/facebook/callback", passport.authenticate("facebook", {
-        successRedirect: 'https://reactchatio.herokuapp.com/entry',
-        failureRedirect: "https://reactchatio.herokuapp.com/503",
+        successRedirect: '/entry',
+        failureRedirect: "/503",
         failureFlash: 'Invalid social authentication',
         successFlash: 'Welcome'
     }))
