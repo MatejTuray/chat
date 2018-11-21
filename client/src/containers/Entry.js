@@ -19,7 +19,7 @@ class Entry extends Component {
         setTimeout( () => 
         this.setState({
             redirect:true
-        }), 60000)
+        }), 6000)
     
     }
   

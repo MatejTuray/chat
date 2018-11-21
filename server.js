@@ -30,7 +30,7 @@ app.use(cookieSession({
     keys: [key]
 }))
 app.use(flash())
-
+app.enable("trust proxy");
 app.use(passport.initialize())
 app.use(passport.session())
 require("./oauth/oauth-google")(app)
