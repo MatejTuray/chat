@@ -152,7 +152,9 @@ class Dashboard extends Component {
         }
     }
   
-     
+    componentWillUnmount(){
+        this.props.socket.disconnect()
+    }
     toggleCollapsed = () => {
         this.setState({
           collapsed: !this.state.collapsed,
