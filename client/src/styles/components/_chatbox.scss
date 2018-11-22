@@ -75,7 +75,7 @@ li{
     border: none;
 }
 .chat_msg_list{
-    height: 55vh;
+    height: 70vh;
     overflow-y: auto;
     margin-left: -2.5rem;
 }
@@ -95,14 +95,14 @@ li{
 }
 .emoji-picker{
     position: fixed;
-    bottom: 30vh;
-    left: 16.5%;
+    bottom: 49vh;
+    left: -3.5%;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .emoji_button{
     float: left;
-    margin-top: -3.2rem;
-    margin-left: 3.2rem;
+    margin-top: -1.2rem;
+    margin-left: 3.1rem;
     background: transparent;
     border: none;
 }
@@ -117,11 +117,12 @@ li{
 @media (min-width:$desktop-breakpoint){
     .emoji-picker{
         position: fixed;
-        bottom: 30vh;
+        bottom: 36vh;
         left: 13.3%;
     }
     .emoji_button{
-        margin-top: -3.2rem;
+        
+        margin-top: -0.2rem;
         margin-left: 12rem;
     }
     .chat_form{
