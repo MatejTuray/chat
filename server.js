@@ -186,7 +186,7 @@ io.on("connection", (socket) => {
         console.log("User disconnected")
         uniqueUsers = new Set(helper)
         usersWithNames = Array.from(uniqueUsers)
-        usersWithNames = usersWithNames.filter((user) => user.name !== socket.name )
+        usersWithNames = usersWithNames.filter((user) => user.name !== socket.name && user.img !== socket.img)
         
         usersWithNames = _.uniq(usersWithNames)
 
