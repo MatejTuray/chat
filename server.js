@@ -82,8 +82,9 @@ io.on("connection", (socket) => {
         }
         uniqueUsers = new Set(helper)
         usersWithNames = Array.from(uniqueUsers)
-        usersWithNames = _.uniq(usersWithNames)
+        usersWithNames = _.uniqBy()
         io.emit("get_users", usersWithNames)
+        console.log(usersWithNames)
     })
 
 
@@ -185,10 +186,12 @@ io.on("connection", (socket) => {
         console.log("User disconnected")
         uniqueUsers = new Set(helper)
         usersWithNames = Array.from(uniqueUsers)
-        usersWithNames = usersWithNames.filter((user) => user.id !== socket.id)
-        console.log(usersWithNames)
+        usersWithNames = usersWithNames.filter((user) => user.name !== socket.name )
+        
         usersWithNames = _.uniq(usersWithNames)
+
         io.emit("user_disconnect", usersWithNames)
+        console.log(usersWithNames)
     })
     socket.on("disconnect_room", (room) => {
         socket.leave(room, (err) => {
