@@ -183,14 +183,13 @@ io.on("connection", (socket) => {
         console.log(io.sockets.clients(room).eio)
     })
     socket.on("disconnect", () => {
+        socket.disconnect()
         console.log("User disconnected")
         uniqueUsers = new Set(helper)
         usersWithNames = Array.from(uniqueUsers)
         usersWithNames = usersWithNames.filter((user) => user.name !== socket.name && user.img !== socket.img)
-        
         usersWithNames = _.uniq(usersWithNames)
-
-        io.emit("user_disconnect", usersWithNames)
+        io.emit("user_disconnect", usersWithNames)       
         console.log(usersWithNames)
     })
     socket.on("disconnect_room", (room) => {
