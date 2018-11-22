@@ -22,6 +22,10 @@
     min-width: 100vw;
 
 }
+.navbar_img{
+    max-height: $m-size;
+    width: auto;
+}
 
 .bm-menu{
     background: #5c258d; /* fallback for old browsers */

@@ -427,7 +427,7 @@ class Dashboard extends Component {
                 <Navbar dark className="fixed-top ">
                 <NavbarToggler onClick={() => this.toggleMenu()} />
             <NavbarBrand>
-                {this.props.room.img ? <img className="rounded-circle chatbox_img " src={this.props.room.img}/> : undefined}   {page()}
+                {this.props.room.img ? <img className="rounded-circle navbar_img " src={this.props.room.img}/> : undefined}   {page()}
               {this.props.room.name ? <button className="end_conv"><Link onClick={() => {this.handleLeavePrivateConv(this.props.room.name); this.handleRemoveTab(this.props.room.name) }}push to="/dashboard"><i id="end_conv_icon" className="fas fa-times"></i></Link></button> : undefined}
             </NavbarBrand>
             <NavbarNav className="float-right" right>

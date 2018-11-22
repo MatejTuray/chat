@@ -82,6 +82,7 @@ io.on("connection", (socket) => {
         }
         uniqueUsers = new Set(helper)
         usersWithNames = Array.from(uniqueUsers)
+        usersWithNames = _.uniq(usersWithNames)
         io.emit("get_users", usersWithNames)
     })
 
@@ -186,6 +187,7 @@ io.on("connection", (socket) => {
         usersWithNames = Array.from(uniqueUsers)
         usersWithNames = usersWithNames.filter((user) => user.id !== socket.id)
         console.log(usersWithNames)
+        usersWithNames = _.uniq(usersWithNames)
         io.emit("user_disconnect", usersWithNames)
     })
     socket.on("disconnect_room", (room) => {
