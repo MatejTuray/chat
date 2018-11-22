@@ -82,7 +82,7 @@ io.on("connection", (socket) => {
         }
         uniqueUsers = new Set(helper)
         usersWithNames = Array.from(uniqueUsers)
-        usersWithNames = _.uniqBy()
+        usersWithNames = _.uniq(usersWithNames)
         io.emit("get_users", usersWithNames)
         console.log(usersWithNames)
     })
