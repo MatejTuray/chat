@@ -40,7 +40,7 @@ class App extends Component {
 
   }
   componentWillUnmount() {
-    socket.disconnect()
+    socket.disconnect(true)
   }
 
   render() {

@@ -183,8 +183,7 @@ io.on("connection", (socket) => {
     socket.on("room_users", (room) => {
         console.log(io.sockets.clients(room).eio)
     })
-    socket.on("disconnect", (socket) => {
-        socket.disconnect(true)
+    socket.on("disconnect", (socket) => {        
         console.log("User disconnected")
         uniqueUsers = new Set(helper)
         usersWithNames = Array.from(uniqueUsers)
