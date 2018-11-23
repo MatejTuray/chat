@@ -56,7 +56,7 @@ let helper = []
 let uniqueUsers
 let usersWithNames
 io.on("connection", (socket) => {
-    setTimeout(() => socket.disconnect(true), 60000*15);
+    
     users.push({ id: socket.id })
     socket.emit("fetch_id", socket.id)
 
@@ -186,10 +186,10 @@ io.on("connection", (socket) => {
     })
     socket.on("disconnect", (sckt) => {        
         console.log("User disconnected")
-        console.log(sckt.id, sckt.name)
+        console.log(socket.id, socket.name)
         uniqueUsers = new Set(helper)
         usersWithNames = Array.from(uniqueUsers)
-        usersWithNames = usersWithNames.filter((user) => sckt.name !== user.name)
+        usersWithNames = usersWithNames.filter((user) => socket.name !== user.name)
         usersWithNames = _.uniq(usersWithNames)
         io.emit("user_disconnect", usersWithNames)       
         console.log(usersWithNames)
