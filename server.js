@@ -65,29 +65,16 @@ io.on("connection", (socket) => {
     socket.on("set_name", (data) => {
         socket.name = data.name
         socket.img = data.img
-        console.log(socket.name, socket.img, data)
-        console.log("New user: " + socket.id + ": " + socket.name, socket.img)
+        console.log(socket.name, socket.img, data)        
         socket.emit("fetch_user", socket.name)
         users.find((user) => {
             if (user.id === socket.id) {
                 user.name = socket.name
                 user.img = socket.img
             }
-        })
-        for (let user of users) {
-            users.find((user) => {
-                if (user.name) {
-                    helper.push(user)
-                    helper = _.uniq(helper)
-                }
-            })
-        }
-
-       
-        usersWithNames = Array.from(helper)
-        usersWithNames = _.uniq(usersWithNames)
-        io.emit("get_users", usersWithNames)
-        console.log(usersWithNames)
+        })     
+        io.emit("get_users", users)
+        console.log(users)
     })
 
 
@@ -188,10 +175,9 @@ io.on("connection", (socket) => {
     socket.on("disconnect", (sckt) => {        
         console.log("User disconnected")
         console.log(socket.id, socket.name)    
-        usersWithNames = usersWithNames.filter((user) => user.name === socket.name )
-        usersWithNames = _.uniq(usersWithNames)
-        io.emit("user_disconnect", usersWithNames)       
-        console.log(usersWithNames)
+        users = users.filter((user) => user.name !== socket.name)      
+        io.emit("user_disconnect", users)       
+        console.log(users)
         socket.disconnect(true)
     })
     socket.on("disconnect_room", (room) => {
