@@ -78,12 +78,13 @@ io.on("connection", (socket) => {
             users.find((user) => {
                 if (user.name) {
                     helper.push(user)
+                    helper = _.uniq(helper)
                 }
             })
         }
 
-        uniqueUsers = new Set(helper)
-        usersWithNames = Array.from(uniqueUsers)
+       
+        usersWithNames = Array.from(helper)
         usersWithNames = _.uniq(usersWithNames)
         io.emit("get_users", usersWithNames)
         console.log(usersWithNames)
@@ -186,10 +187,8 @@ io.on("connection", (socket) => {
     })
     socket.on("disconnect", (sckt) => {        
         console.log("User disconnected")
-        console.log(socket.id, socket.name)
-        uniqueUsers = new Set(helper)
-        usersWithNames = Array.from(uniqueUsers)
-        usersWithNames = usersWithNames.filter((user) => socket.name !== user.name)
+        console.log(socket.id, socket.name)    
+        usersWithNames = usersWithNames.filter((user) => user.name === socket.name )
         usersWithNames = _.uniq(usersWithNames)
         io.emit("user_disconnect", usersWithNames)       
         console.log(usersWithNames)
