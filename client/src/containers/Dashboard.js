@@ -14,7 +14,7 @@ import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem,  NavbarNav, Butto
 import ChannelList from '../components/ChannelList';
 import FriendList from '../components/FriendList';
 import { ToastContainer, toast } from 'mdbreact';
-import {Modal, ModalBody, ModalHeader, ModalFooter, HamburgerToggler} from 'mdbreact';
+import {Modal, ModalBody, ModalHeader, ModalFooter} from 'mdbreact';
 import PrivateToastMessage from "../components/PrivateToastMessage"
 import PrivateChatRoomSocket from "./PrivateChatRoomSocket";
 import axios from "axios"
@@ -430,7 +430,7 @@ class Dashboard extends Component {
             <div>
             <div className="container-fluid" id="main">
                 <Navbar dark className="fixed-top ">
-                <HamburgerToggler onClick={() => this.toggleMenu()} />
+                <NavbarToggler onClick={() => this.toggleMenu()} />
             <NavbarBrand>
                 {this.props.room.img ? <img className="rounded-circle navbar_img " src={this.props.room.img}/> : undefined}   {page()}
               {this.props.room.name ? <button className="end_conv"><Link onClick={() => {this.handleLeavePrivateConv(this.props.room.name); this.handleRemoveTab(this.props.room.name) }}push to="/dashboard"><i id="end_conv_icon" className="fas fa-times"></i></Link></button> : undefined}
