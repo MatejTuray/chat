@@ -14,8 +14,7 @@ class Entry extends Component {
         }
     }
     componentDidMount() {
-        this.props.fetchUser()
-        
+        this.props.fetchUser()        
         setTimeout( () => 
         this.setState({
             redirect:true

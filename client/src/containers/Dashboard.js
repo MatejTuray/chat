@@ -70,6 +70,7 @@ class Dashboard extends Component {
         }
     }
     componentDidMount() {
+        this.props.socket.open()
         if (this.props.auth.name) {
             let data = {
                 img: this.props.auth.img,
@@ -241,7 +242,7 @@ class Dashboard extends Component {
     handleLogout() {
         this.props.logoutUser()
         this.props.socket.emit("disconnect", (this.props.socket))
-        this.props.socket.disconnect(true)
+        this.props.socket.disconnect()
         
     }
     handleFriendRequest(id, data) {
