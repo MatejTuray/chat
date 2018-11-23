@@ -240,7 +240,9 @@ class Dashboard extends Component {
     }
     handleLogout() {
         this.props.logoutUser()
-        this.props.socket.disconnect()
+        this.props.socket.emit("disconnect", (this.props.socket))
+        this.props.socket.disconnect(true)
+        
     }
     handleFriendRequest(id, data) {
         this.props.AddGetFriend(id, data, this.state.users)
