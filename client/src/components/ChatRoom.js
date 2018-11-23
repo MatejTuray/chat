@@ -128,7 +128,7 @@ class ChatRoom extends Component {
 
                 {/* {message.from}: */}
                
-                <ul className="chat_msg_list">
+                <ul  onClick={() => this.setState({emoji: false})} className="chat_msg_list">
                     
                     {this.state.messages.map((message) => <li key={message.createdAt}><span><Tooltip
 
@@ -141,7 +141,7 @@ trigger="mouseenter"
         </div>
                 </ul>
                 
-                <div   onClick={() => this.setState({emoji: false})} id="toolbar" className="d-flex justify-content-center w-100">
+                <div onClick={() => this.setState({emoji: false})} id="toolbar" className="d-flex justify-content-center w-100">
                
                 <form className="chat_form form-inline"onSubmit={(e) => this.handleSendMessage(e, this.props.room.name)}>
                     <input className="form-control mr-2 chat_input w-75" type="text" value={this.state.msg} onInput={(e) => this.handleTyping(e)} onBlur={this.handleFocusLoss} />
