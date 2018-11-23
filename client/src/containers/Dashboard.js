@@ -486,10 +486,10 @@ class Dashboard extends Component {
         <Collapse isOpen={this.state.channelsOpen}>
         <a  className="menu-item text-right d-flex justify-content-between p-3" onClick={() => this.setState({openCreateChannel: !this.state.openCreateChannel})} ><i className="ml-2 fas fa-hashtag"/><span className="menu_item_text">New</span></a>
                     <Collapse isOpen={this.state.openCreateChannel}>
-                    <div className="ml-4">
-                    <form className="form-inline" onSubmit={(e) => {this.handleCreateChannel(e); this.setState({openCreateChannel: false})}}>
+                    <div className="ml-5">
+                    <form className="form-inline ml-2" onSubmit={(e) => {this.handleCreateChannel(e); this.setState({openCreateChannel: false})}}>
                     <button className="mr-1 create_channel_button"><i className="create_channel_icon fas fa-check-circle"></i></button>
-                    <Input className="create_channel w-75"type="text" label="Channel name?"  />
+                    <Input className="create_channel w-100"type="text" label="Channel name?"  />
                     
                    
                 </form>   
