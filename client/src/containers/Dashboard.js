@@ -488,8 +488,8 @@ class Dashboard extends Component {
                     <Collapse isOpen={this.state.openCreateChannel}>
                     <div className="ml-4">
                     <form className="form-inline" onSubmit={(e) => {this.handleCreateChannel(e); this.setState({openCreateChannel: false})}}>
-                    <button classname="mr-1 create_channel_button"><i className="fas fa-check-circle"></i></button>
-                    <Input classname="create_channel w-50"type="text" label="Channel name?"  />
+                    <button className="mr-1 create_channel_button"><i className="fas fa-check-circle"></i></button>
+                    <Input className="create_channel w-75"type="text" label="Channel name?"  />
                     
                    
                 </form>   
